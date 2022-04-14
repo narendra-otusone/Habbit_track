@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/home.css">
+    <title>Habit Tracker</title>
+</head>
+<body>
+    
+    <div class="habit-input-container">
+        <h1>
+            Start with a new habit today!
+        </h1>
+        
+        <form action="/add-habit" method="post">
+            <input type="text" name="habit" id="habit" required>
+            <button type="submit">
+                <i class="fas fa-plus-square"></i>
+            </button>
+        </form>
+
+        <form action="/change-view" method="post">
+            <% if(view === "Daily"){%>
+                <button type="submit">
+                    Weekly    
+                </button>
+            <% } else {%>
+
+                <button type="submit">
+                    Daily
+                </button>
+
+            <% } %>
+        </form>
+
+        <div class="habit-status">
+            <span>
+                <i class="far fa-check-circle green"></i>
+                -Done    
+            </span>
+
+            <span style="margin-left: 0.5rem;">
+                <i class="far fa-times-circle red"></i>
+                -Not Done
+            </span>
+
+            <span style="margin-left: 0.5rem;">
+                <i class="far fa-minus-circle yellow"></i>
+                -UnMarked
+            </span>
+            
+        </div>
+    </div>
+
+    <div class="habits-container">
+        <ul class="habits-list">
+            <% for(let habit of allHabits){ %>
+
+                <% if(view === "Daily"){%>
+
+                    <%-include("_daily", {habit: habit});%>
+
+                <% }else{ %>
+
+                    <%-include("_weekly", {habit: habit});%>
+
+                <% } %>
+                
+            <% } %>
+        </ul>
+    </div>
+
+
+    <script src="js/home.js"></script>
+</body>
+</html>

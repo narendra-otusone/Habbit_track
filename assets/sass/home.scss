@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fda085;
+    color: white;
+    font-family: Poppins;
+    min-height: 100vh;
+    .habit-input-container{
+        margin-top: 1.5rem;
+        text-align: center;
+        form{
+            display: flex;
+            margin-top: 1.3rem;
+            justify-content: center;
+        }
+        input, button{
+            padding: 0.5rem;
+            font-size: 2rem;
+            border: none;
+            background-color: white;
+        }
+        button{
+            color: #d88771;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background: #d88771;
+            color: white;
+        }
+        
+    }
+}
+
+.habit-status{
+    margin-top: 1.5rem;
+    span{
+        font-size: 1.1rem;
+    }
+}
+
+.habits-list{
+    margin-top: 1.5rem;
+    list-style: none;
+    li{
+        margin-bottom: 0.5rem;
+    }
+    .habit-item{
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 25em;
+        background-color: #5b4343ad;
+        .habit-name{
+            padding: 0 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        button{
+            border: none;
+            font-size: 1.5rem;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+}
+
+.weekly-habit-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #5b4343ad;
+    button {
+        border: none;
+        font-size: 1.5rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .previous-dates-status {
+        display: flex;
+        .card{
+            text-align: center;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            .dates{
+                background-color: red;
+                padding: 0.4rem;
+            }
+            .date-status{
+                padding: 0.4rem;
+                background-color: white;
+            }
+        }
+    }
+}
+
+
+
+.red{
+    color: red;
+}
+
+.green{
+    color: lawngreen;
+}
+
+.yellow{
+    color: yellow;
+}
