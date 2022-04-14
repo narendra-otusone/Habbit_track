@@ -1,10 +1,11 @@
+require("dotenv").config();
 // require the express
 const express = require("express");
 const path = require("path");
 const db = require("./config/mongoose");
 const sassMiddleware = require("node-sass-middleware");
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 // body parser
 app.use(express.urlencoded({

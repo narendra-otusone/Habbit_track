@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 // connect to the database
-mongoose.connect("mongodb://localhost/habit_tracker_db");
+mongoose.connect(process.env.DATABASE);
 
 // acquire the connection(to check if it is succesful)
 const db = mongoose.connection;
